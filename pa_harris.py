@@ -25,7 +25,7 @@ def main_process(sourceImg):
     faces = face_haar.detectMultiScale(gray_img, 1.3, 5)
     for face_x,face_y,face_w,face_h in faces:
     	cv2.rectangle(img, (face_x, face_y), (face_x+face_w, face_y+face_h), (0,255,0), 2)
-            # 眼长在脸上
+        # 眼长在脸上
     	roi_gray_img = gray_img[face_y:face_y+face_h, face_x:face_x+face_w]
     	roi_img = img[face_y:face_y+face_h, face_x:face_x+face_w]
     	eyes = eye_haar.detectMultiScale(roi_gray_img, 1.3, 5)
